@@ -16,6 +16,24 @@ class user(Base):
     username  = Column(String)
     password  = Column(String)
 
+# the shifts of every user:
+    __tablename__ = "shifts"
+
+    id = Column(Integer, primary_key=True)
+    # date = 
+
+
+# def register():
+#     if request.method == "POST":
+#         username= request.form["email"]
+#         password = request.form["pws"]
+#         password_2 = request.form["psw-rpeat"]
+
+#         creat_user(username, password, password_2)
+#         return render_template("home.html")
+#     else:
+#         return render_template("register.html")
+
 
 
 

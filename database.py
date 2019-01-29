@@ -12,19 +12,24 @@ def query_all():
 	all_users = session.query(user).all()
 	return all_users
 
+def query_user_by_id(id):
+	user_4 = session.query(user).filter_by(id=id).first()
+	return user_4
+
 def creat_user(username, password, password_2):
-	if password==password_2:
-		user1 = User(username = username, password = password)
+	if password== password_2:
+		user1 = user(username = username, password = password)
 		session.add(user1)
 		session.commit()
+		return "user created succesfully"
 	else:
-		return "passwordsser' is not definedser' is not defined dosn't match"
+		return "passwords dosn't match"
 
 def sign_in(uname , pws):
 	user_3 = session.query(user).filter_by(username=uname).first()
-	if user:
-		if user.password == pws:
-			return user.id
+	if user_3:
+		if user_3.password == pws:
+			return user_3.id
 	else:
 		return False
 

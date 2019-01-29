@@ -10,9 +10,9 @@ form {
 
 /* Full-width inputs */
 input[type=text], input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
+  width: 90%;
+  padding: 20px 30px;
+  margin: 30px 0;
   display: inline-block;
   border: 1px solid #ccc;
   box-sizing: border-box;
@@ -45,6 +45,7 @@ button:hover {
 .imgcontainer {
   text-align: center;
   margin: 24px 0 12px 0;
+  color: Blue
 }
 
 /* Avatar image */
@@ -75,20 +76,29 @@ span.psw {
   }
 }</style>
 <body>
+<!-- 	<script>
+		var response = { response|safe }
+	</script>
+ -->
 
 <form method="POST" action="/sign_in">
   <div class="imgcontainer">
-    <img src="img_avatar2.png" alt="Jobyy time" class="avatar">
+    <img src="img_avatar2.png"  alt="Jobyy time"  class="imgcontainer">
+    <h1 style="font-size: 100, color: Blue">Jobby Time </h1>
   </div>
+  <h2 class="imgcontainer" >welcome to Jobby Time! use our website to keep in track of your working hours and shifts! make sure you don't forget any work time you should be paid for! signin to look at your profile </h2>
+
+  <button type="submit" method="GET" action="/register" style=" background-color: #2E64FE; text-decoration-color: Red">Creat a new acount for free</button>
 
   <div class="container">
     <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
+    <input type="text" placeholder="Enter Username" name="uname" >
 
     <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+    <input type="password" placeholder="Enter Password" name="psw">
 
     <button type="submit">Login</button>
+
     <label>
 
   </div>
