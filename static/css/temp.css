@@ -6,6 +6,7 @@ body{
   margin-left: 10%;
   margin-right: 10%;
   background-color: powderblue ;
+  font-family: 'Verdana',sans-serif ;
 }
 /* Full-width inputs */
 input[type=text], input[type=password] {

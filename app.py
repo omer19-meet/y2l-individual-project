@@ -2,9 +2,8 @@ from flask import Flask, render_template, request, redirect, url_for, session as
 from database import *
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'asdasfsad'
-@app.route('/', methods = ['GET', 'POST'])
 
-# home page with a singin form
+@app.route('/', methods = ['GET', 'POST'])
 def hello_world():
 	if request.method == 'GET':
    		return render_template("home.html")
@@ -14,29 +13,28 @@ def hello_world():
 		password = request.form["psw"]
 
 		user_id = sign_in(uname, password)
-		print(user_id)
 		if user_id:
 			login_session['username'] = uname
 			return redirect(url_for("query_user_route", id=user_id))
 		else:
-			error ="Password or user doesn't match. Try to creat a new account (blue button). Forgot password curently inactive"
+			error ="Password or user doesn't match. Try to creat a new account (blue button)"
 			return render_template("home.html", error = error)
 
 @app.route('/user/<int:id>')
 def query_user_route(id):
-    user = query_user_by_id(id)
-    all_shifts = get_shift_by_owner(owner=id)
-    return render_template('user.html', user=user, all_shifts=all_shifts)
+	user = query_user_by_id(id)
+	all_shifts = get_shift_by_owner(owner=id)
+	return render_template('user.html', user=user, all_shifts=all_shifts)
 
 
 @app.route("/register", methods=["POST","GET"])
 def register():
 	if request.method == "POST":
-		username= request.form["email"]
+		username= request.form["name"]
 		password = request.form["psw"]
 		password_2 = request.form["psw-repeat"]
 
-		print(username, password, password_2)
+		# print(username, password, password_2)
 		# response = creat_user(username, password, password_2)
 		creat_user(username, password, password_2)
 		# if response== "passwords dosn't match":
@@ -94,7 +92,7 @@ def delete_shift():
 		username = login_session['username']
 		if request.method == "POST":
 			
-			eprove = "new shift added succesfully"
+			eprove = "shift deleteted succesfully"
 			i_d = request.form["id_shift"]
 			delete_shift1(id=i_d)
 			return redirect(url_for("query_user_route", eprove=eprove , id = query_user_by_username(username).id))

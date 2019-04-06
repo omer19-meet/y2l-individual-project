@@ -25,15 +25,19 @@ tr:nth-child(even) {
 </style>
 </head>
 <body>
-	{{user.username}}
+  <br>
+  <h2>profile overview </h2>
+	singed in as: <b> {{user.username}} </b> <a href="{{url_for('hello_world')}}"> singout</a>
 	<br>
 	<!-- {{user.password}} -->
 	<br>
 	<a class="bootstrap" href="{{url_for('add_shift')}}"> write down a new shift </a>
 <br>
 	<a class="bootstrap" href="{{url_for('delete_shift')}}"> Delete a shift <h8>(you'll have to remember the shift serial num., as written down here) </h8>  </a>
-
+  <br>
 	<table style="width:50%">
+    <h2> Your Shiftes: </h2>
+    <br>
   	<tr>
   	<th>serial</th>
     <th>Date (yyyy-mm-dd) </th>
@@ -53,6 +57,7 @@ tr:nth-child(even) {
   <tr>
 </table>
 {{eprove}}
+
 	
 	<!-- {{user.last_shifts}} -->
 

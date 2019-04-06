@@ -8,7 +8,7 @@
 <body>
  <div class="container">
     <form action="/delete_shift" method="post">
-    <h6> Note that after submitting this form you wont be able to restor </h6>
+    <h4>!! Note that after submitting this form you won't be able to reastor your data!! </h4>
     <br>
   Insert the serial number of the lab you wish to delete:
   <input type="text" name="id_shift">
@@ -16,6 +16,7 @@
 
   <h4 id="danger"> <b style="color: red; "> {{error}} </b> </h4>
   <br>
+  <h5 id="danger">Make sure you insert the right serail number. after submiting you can't go back!</h5>
   <input type="submit" value="Send">
 </form>
   </div>
