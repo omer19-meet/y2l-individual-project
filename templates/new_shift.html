@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Jobyy</title>
+  <!-- <style rel="stylesheet" type="text/css" href="stylesheet.css"> </style> -->
+  <link rel="stylesheet" href="{{url_for('static', filename='stylesheet.css')}}">
+</head>
+<body>
+
+  <div class="imgcontainer">
+    <img src="img_avatar2.png"  alt="Jobyy time"  class="imgcontainer">
+    <h1 style="font-size: 100, color: "Blue" >Jobby Time </h1>
+    <h3> wright down a shift</h3>
+
+  <div class="container">
+    <form action="/add_shift" method="post">
+    <h6> Note that you have to fill all form inputs. On "Time" fields, use "up arrow" and "down arrow" to sweatch between "AM" and "PM" </h6>
+    <br>
+  Date:
+  <input type="date" name="date_start">
+  Start time:
+  <input type="time" name="time_start">
+  Finish time:
+  <input type="time" name="time_finish">
+  <br>
+
+  <h4 id="danger"> <b style="color: red; "> {{error}} </b> </h4>
+  <br>
+  <input type="submit" value="Send">
+</form>
+  </div>
+
+  <div class="container" style="background-color:#f1f1f1">
+<!--     <button type="button" class="cancelbtn">Cancel</button>
+    <span class="psw">Forgot <a href="#">password?</a></span> -->
+  </div>
+</body>

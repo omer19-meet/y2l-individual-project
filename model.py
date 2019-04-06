@@ -17,11 +17,31 @@ class user(Base):
     password  = Column(String)
 
 # the shifts of every user:
+class shift(Base):
+
     __tablename__ = "shifts"
 
     id = Column(Integer, primary_key=True)
-    # date = 
+    owner = Column(Integer)
+    shift_start_date = Column(String)
+    start_hour = Column(String)
+    finish_hour = Column(String)
 
+
+
+    def total_work_time(self):
+        minutes_1 = float(self.start_hour[3:5])
+        minutes_2 = float(self.finish_hour[3:5])
+        hours_1 = float(self.start_hour[0:2])
+        hours_2 = float(self.finish_hour[0:2])
+        print(minutes_1)
+        print(minutes_2)
+        print(hours_1)
+        print(hours_2)
+        total_min = (minutes_2-minutes_1)/60
+        total_hours = hours_2-hours_1
+        total_hours += total_min
+        return total_hours
 
 # def register():
 #     if request.method == "POST":
